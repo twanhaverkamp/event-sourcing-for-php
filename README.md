@@ -1,1 +1,1 @@
-# event-sourcing
+# Event Sourcing for PHP

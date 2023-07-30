@@ -1,0 +1,7 @@
+services:
+  app:
+    image: php:8.2-alpine
+    entrypoint: ['sh', 'entrypoint.sh']
+    volumes:
+      - ./:/var/www/event-sourcing
+    working_dir: /var/www/event-sourcing

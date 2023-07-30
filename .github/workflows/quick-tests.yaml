@@ -1,0 +1,57 @@
+name: Run quick tests
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  composer-audit:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run Composer audit
+        uses: php-actions/composer@v6
+        with:
+          command: composer audit
+
+  unit-tests:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Composer install
+        uses: php-actions/composer@v6
+
+      - name: Run PHPUnit
+        uses: php-actions/phpunit@v3
+        with:
+          args: --testsuite unit --testdox
+
+  static-code-analysis:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Composer install
+        uses: php-actions/composer@v6
+
+      - name: Run PHPStan
+        uses: php-actions/phpstan@v3
+        with:
+          memory_limit: -1
+
+  coding-standards:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Composer install
+        uses: php-actions/composer@v6
+
+      - name: Run PHP CodeSniffer
+        run: vendor/bin/phpcs src tests --colors
