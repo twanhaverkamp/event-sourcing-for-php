@@ -6,58 +6,46 @@ on:
 
 jobs:
   composer-audit:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Start containers
-        run: docker-compose up -d
 
       - name: Run Composer audit
-        run: docker-compose exec -T app composer audit
-
-      - name: Stop containers
-        run: docker-compose down -v
+        run: composer audit
 
   unit-tests:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Start containers
-        run: docker-compose up -d
+      - name: Run Composer install
+        uses: php-actions/composer@v6
 
       - name: Run PHPUnit
-        run: docker-compose exec -T app vendor/bin/phpunit --testsuite unit --testdox
-
-      - name: Stop containers
-        run: docker-compose down -v
+        run: vendor/bin/phpunit --testsuite unit --testdox
 
   static-code-analysis:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Start containers
-        run: docker-compose up -d
+      - name: Run Composer install
+        uses: php-actions/composer@v6
 
       - name: Run PHPStan
-        run: docker-compose exec -T app vendor/bin/phpstan analyse --memory-limit=-1
-
-      - name: Stop containers
-        run: docker-compose down -v
+        run: vendor/bin/phpstan analyse --memory-limit=-1
 
   coding-standards:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Run PHP CodeSniffer
-        run: docker-compose exec -T app vendor/bin/phpcs src tests --colors
+      - name: Run Composer install
+        uses: php-actions/composer@v6
 
-      - name: Stop containers
-        run: docker-compose down -v
+      - name: Run PHP CodeSniffer
+        run: vendor/bin/phpcs src tests --colors
