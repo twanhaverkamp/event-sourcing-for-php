@@ -6,53 +6,58 @@ on:
 
 jobs:
   composer-audit:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+
+      - name: Start containers
+        run: docker-compose up -d
 
       - name: Run Composer audit
-        uses: php-actions/composer@v6
-        with:
-          command: audit
+        run: docker-compose exec -T app composer audit
+
+      - name: Stop containers
+        run: docker-compose down -v
 
   unit-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Composer install
-        uses: php-actions/composer@v6
+      - name: Start containers
+        run: docker-compose up -d
 
       - name: Run PHPUnit
-        uses: php-actions/phpunit@v3
-        with:
-          version: 10
-          args: --testsuite unit --testdox
+        run: docker-compose exec -T app vendor/bin/phpunit --testsuite unit --testdox
+
+      - name: Stop containers
+        run: docker-compose down -v
 
   static-code-analysis:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Composer install
-        uses: php-actions/composer@v6
+      - name: Start containers
+        run: docker-compose up -d
 
       - name: Run PHPStan
-        uses: php-actions/phpstan@v3
-        with:
-          memory_limit: -1
+        run: docker-compose exec -T app vendor/bin/phpstan analyse --memory-limit=-1
+
+      - name: Stop containers
+        run: docker-compose down -v
 
   coding-standards:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Composer install
-        uses: php-actions/composer@v6
-
       - name: Run PHP CodeSniffer
-        run: vendor/bin/phpcs src tests --colors
+        run: docker-compose exec -T app vendor/bin/phpcs src tests --colors
+
+      - name: Stop containers
+        run: docker-compose down -v
