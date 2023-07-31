@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Composer install
-        uses: php-actions/composer@v6
+        run: composer install --dev
 
       - name: Run PHPUnit
         run: vendor/bin/phpunit --testsuite unit --testdox
@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Composer install
-        uses: php-actions/composer@v6
+        run: composer install --dev
 
       - name: Run PHPStan
         run: vendor/bin/phpstan analyse --memory-limit=-1
@@ -45,7 +45,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Composer install
-        uses: php-actions/composer@v6
+        run: composer install --dev
 
       - name: Run PHP CodeSniffer
-        run: vendor/bin/phpcs src tests --colors
+        run: vendor/bin/phpcs -p
