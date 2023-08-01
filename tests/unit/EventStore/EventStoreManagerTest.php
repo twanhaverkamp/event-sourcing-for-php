@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\EventStore;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore;
 
 use PHPUnit\Framework\TestCase;
-use TwanHaverkamp\EventSourcing\AggregateRoot\AggregateRootInterface;
-use TwanHaverkamp\EventSourcing\EventStore\EventStoreManager;
-use TwanHaverkamp\EventSourcing\EventStore\Example\ExampleEventStore;
-use TwanHaverkamp\EventSourcing\Exception\EventStoreNotFoundException;
-use TwanHaverkamp\EventSourcing\Tests\Unit\EventStore\Mock\AggregateRootMock;
-use TwanHaverkamp\EventSourcing\Tests\Unit\EventStore\Mock\EventStoreMock;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\EventStoreManager;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\Example\ExampleEventStore;
+use TwanHaverkamp\EventSourcingForPhp\Exception\EventStoreNotFoundException;
+use TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore\Mock\AggregateRootMock;
+use TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore\Mock\EventStoreMock;
 
 /**
- * @coversDefaultClass \TwanHaverkamp\EventSourcing\EventStore\EventStoreManager
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\EventStore\EventStoreManager
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */

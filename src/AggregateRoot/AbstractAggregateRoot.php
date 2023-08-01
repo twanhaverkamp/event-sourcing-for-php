@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\AggregateRoot;
+namespace TwanHaverkamp\EventSourcingForPhp\AggregateRoot;
 
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

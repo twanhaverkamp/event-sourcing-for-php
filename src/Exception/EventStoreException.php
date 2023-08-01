@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Exception;
+namespace TwanHaverkamp\EventSourcingForPhp\Exception;
 
 use Exception;
 

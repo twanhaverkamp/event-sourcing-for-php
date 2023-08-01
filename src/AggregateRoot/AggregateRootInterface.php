@@ -1,11 +1,11 @@
 <?php
 
-namespace TwanHaverkamp\EventSourcing\AggregateRoot;
+namespace TwanHaverkamp\EventSourcingForPhp\AggregateRoot;
 
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
-use TwanHaverkamp\EventSourcing\EventStore\EventStoreInterface;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\EventStoreInterface;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

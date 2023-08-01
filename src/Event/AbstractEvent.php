@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Event;
+namespace TwanHaverkamp\EventSourcingForPhp\Event;
 
 use DateTimeInterface;
-use TwanHaverkamp\EventSourcing\Event\Trait\SnakeCaseClassNameTypeTrait;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Event\Trait\SnakeCaseClassNameTypeTrait;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

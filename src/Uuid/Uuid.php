@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Uuid;
+namespace TwanHaverkamp\EventSourcingForPhp\Uuid;
 
 use Symfony\Component\Uid\Uuid as BaseUuid;
 

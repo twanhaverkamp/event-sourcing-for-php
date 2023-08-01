@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Event;
+namespace TwanHaverkamp\EventSourcingForPhp\Event;
 
 use Countable;
 use Iterator;

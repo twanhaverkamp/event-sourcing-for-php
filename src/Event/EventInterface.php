@@ -1,9 +1,9 @@
 <?php
 
-namespace TwanHaverkamp\EventSourcing\Event;
+namespace TwanHaverkamp\EventSourcingForPhp\Event;
 
 use DateTimeInterface;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Event;
+namespace TwanHaverkamp\EventSourcingForPhp\Event;
 
 use DateTimeImmutable;
 use Serializable;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

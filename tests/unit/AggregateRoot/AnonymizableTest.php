@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\AggregateRoot;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\AggregateRoot;
 
 use PHPUnit\Framework\TestCase;
-use TwanHaverkamp\EventSourcing\AggregateRoot\AggregateRootInterface;
-use TwanHaverkamp\EventSourcing\AggregateRoot\Example\ExampleAggregateRoot;
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Example\ExampleAggregateRoot;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
 
 /**
- * @coversDefaultClass \TwanHaverkamp\EventSourcing\AggregateRoot\Anonymizable
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Anonymizable
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */

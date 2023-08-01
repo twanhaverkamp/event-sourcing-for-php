@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\Event\Trait;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\Event\Trait;
 
 use PHPUnit\Framework\TestCase;
-use TwanHaverkamp\EventSourcing\Event\Trait\SnakeCaseClassNameTypeTrait;
+use TwanHaverkamp\EventSourcingForPhp\Event\Trait\SnakeCaseClassNameTypeTrait;
 
 /**
- * @coversDefaultClass \TwanHaverkamp\EventSourcing\Event\Trait\SnakeCaseClassNameTypeTrait
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\Event\Trait\SnakeCaseClassNameTypeTrait
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */

@@ -21,12 +21,12 @@
   },
   "autoload": {
     "psr-4": {
-      "TwanHaverkamp\\EventSourcing\\": "src/"
+      "TwanHaverkamp\\EventSourcingForPhp\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "TwanHaverkamp\\EventSourcing\\Tests\\Unit\\": "tests/unit/"
+      "TwanHaverkamp\\EventSourcingForPhp\\Tests\\Unit\\": "tests/unit/"
     }
   }
 }

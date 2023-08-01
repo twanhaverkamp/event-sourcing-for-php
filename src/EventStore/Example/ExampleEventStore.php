@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\EventStore\Example;
+namespace TwanHaverkamp\EventSourcingForPhp\EventStore\Example;
 
 use InvalidArgumentException;
 use LogicException;
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
-use TwanHaverkamp\EventSourcing\EventStore\AbstractEventStore;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\AbstractEventStore;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * Note: This class only exists for test purposes and stores serialized events in the constructed directory.

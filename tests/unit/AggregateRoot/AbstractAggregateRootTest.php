@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\AggregateRoot;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\AggregateRoot;
 
 use PHPUnit\Framework\TestCase;
 use ReflectionProperty;
-use TwanHaverkamp\EventSourcing\AggregateRoot\AbstractAggregateRoot;
-use TwanHaverkamp\EventSourcing\AggregateRoot\AggregateRootInterface;
-use TwanHaverkamp\EventSourcing\AggregateRoot\Example\ExampleAggregateRoot;
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleWasCreatedEvent;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AbstractAggregateRoot;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Example\ExampleAggregateRoot;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleWasCreatedEvent;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
- * @coversDefaultClass \TwanHaverkamp\EventSourcing\AggregateRoot\AbstractAggregateRoot
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AbstractAggregateRoot
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */

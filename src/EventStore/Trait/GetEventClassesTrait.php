@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\EventStore\Trait;
+namespace TwanHaverkamp\EventSourcingForPhp\EventStore\Trait;
 
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

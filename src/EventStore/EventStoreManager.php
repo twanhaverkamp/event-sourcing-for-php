@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\EventStore;
+namespace TwanHaverkamp\EventSourcingForPhp\EventStore;
 
-use TwanHaverkamp\EventSourcing\AggregateRoot\AggregateRootInterface;
-use TwanHaverkamp\EventSourcing\Exception\EventStoreNotFoundException;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
+use TwanHaverkamp\EventSourcingForPhp\Exception\EventStoreNotFoundException;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

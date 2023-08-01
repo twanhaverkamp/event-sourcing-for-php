@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Event\Trait;
+namespace TwanHaverkamp\EventSourcingForPhp\Event\Trait;
 
 use ReflectionClass;
 

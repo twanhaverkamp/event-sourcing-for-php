@@ -1,9 +1,9 @@
 <?php
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\EventStore\Mock;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore\Mock;
 
-use TwanHaverkamp\EventSourcing\AggregateRoot\AbstractAggregateRoot;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AbstractAggregateRoot;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

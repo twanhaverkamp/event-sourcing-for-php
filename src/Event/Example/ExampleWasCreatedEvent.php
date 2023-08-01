@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Event\Example;
+namespace TwanHaverkamp\EventSourcingForPhp\Event\Example;
 
 use DateTimeImmutable;
-use TwanHaverkamp\EventSourcing\Event\AnonymizableInterface;
-use TwanHaverkamp\EventSourcing\Event\SerializableEvent;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Event\AnonymizableInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\SerializableEvent;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * Note: This class only exists for test purposes.

@@ -2,19 +2,19 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\Event;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\Event;
 
 use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
-use TwanHaverkamp\EventSourcing\Event\EventInterface;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleOptionalValueWasChangedEvent;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleRequiredValueWasChangedEvent;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleWasCreatedEvent;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleOptionalValueWasChangedEvent;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleRequiredValueWasChangedEvent;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleWasCreatedEvent;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
- * @coversDefaultClass \TwanHaverkamp\EventSourcing\Event\EventCollection
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\Event\EventCollection
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */

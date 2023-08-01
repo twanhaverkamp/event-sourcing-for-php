@@ -1,6 +1,6 @@
 <?php
 
-namespace TwanHaverkamp\EventSourcing\Uuid;
+namespace TwanHaverkamp\EventSourcingForPhp\Uuid;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

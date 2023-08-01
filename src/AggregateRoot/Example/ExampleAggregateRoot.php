@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\AggregateRoot\Example;
+namespace TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Example;
 
 use DateTimeImmutable;
-use TwanHaverkamp\EventSourcing\AggregateRoot\Anonymizable;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleOptionalValueWasChangedEvent;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleRequiredValueWasChangedEvent;
-use TwanHaverkamp\EventSourcing\Event\Example\ExampleWasCreatedEvent;
-use TwanHaverkamp\EventSourcing\EventStore\Example\ExampleEventStore;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Anonymizable;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleOptionalValueWasChangedEvent;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleRequiredValueWasChangedEvent;
+use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleWasCreatedEvent;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\Example\ExampleEventStore;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
  * Note: This class only exists for test purposes.

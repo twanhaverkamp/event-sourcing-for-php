@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "41c2695171d3362b576d45d4cfc8f0bf",
+    "content-hash": "7c9bf1088893fe1e1ea9fc4291c45c2e",
     "packages": [
         {
             "name": "symfony/polyfill-uuid",

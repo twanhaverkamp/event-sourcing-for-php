@@ -2,21 +2,21 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\Tests\Unit\EventStore;
+namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore;
 
 use FilesystemIterator;
 use PHPUnit\Framework\TestCase;
 use RecursiveDirectoryIterator;
 use RecursiveIteratorIterator;
 use SplFileInfo;
-use TwanHaverkamp\EventSourcing\AggregateRoot\AggregateRootInterface;
-use TwanHaverkamp\EventSourcing\AggregateRoot\Example\ExampleAggregateRoot;
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
-use TwanHaverkamp\EventSourcing\EventStore\Example\ExampleEventStore;
-use TwanHaverkamp\EventSourcing\Uuid\Uuid;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Example\ExampleAggregateRoot;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\Example\ExampleEventStore;
+use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
- * @coversDefaultClass \TwanHaverkamp\EventSourcing\EventStore\AbstractEventStore
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\EventStore\AbstractEventStore
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */

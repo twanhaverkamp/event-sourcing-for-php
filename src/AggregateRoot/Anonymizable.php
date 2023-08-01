@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace TwanHaverkamp\EventSourcing\AggregateRoot;
+namespace TwanHaverkamp\EventSourcingForPhp\AggregateRoot;
 
-use TwanHaverkamp\EventSourcing\Event\AnonymizableInterface;
-use TwanHaverkamp\EventSourcing\Event\EventCollection;
+use TwanHaverkamp\EventSourcingForPhp\Event\AnonymizableInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>

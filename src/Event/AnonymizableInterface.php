@@ -1,8 +1,8 @@
 <?php
 
-namespace TwanHaverkamp\EventSourcing\Event;
+namespace TwanHaverkamp\EventSourcingForPhp\Event;
 
-use TwanHaverkamp\EventSourcing\AggregateRoot\AggregateRootInterface;
+use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
 
 /**
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
