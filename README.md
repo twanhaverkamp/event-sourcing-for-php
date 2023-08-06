@@ -1,4 +1,5 @@
 # Event Sourcing for PHP
+An Event Sourcing library for PHP.
 
 ## Installation
 This library is available as [Composer](https://getcomposer.org) package:
