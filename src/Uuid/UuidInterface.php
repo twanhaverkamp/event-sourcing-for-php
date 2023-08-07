@@ -9,7 +9,7 @@ interface UuidInterface
 {
     public static function init(): self;
     public static function isValid(string $uuid): bool;
-    public static function fromString(string $uuid): self;
+    public static function fromRfc4122(string $uuid): self;
 
-    public function toString(): string;
+    public function toRfc4122(): string;
 }

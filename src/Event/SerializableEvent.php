@@ -36,7 +36,7 @@ abstract class SerializableEvent extends AbstractEvent implements Serializable
     final public function __serialize(): array
     {
         return array_merge([
-            'aggregateRootId' => $this->getAggregateRootId()->toString(),
+            'aggregateRootId' => $this->getAggregateRootId()->toRfc4122(),
             'recordedAt' => $this->getRecordedAt()->format(self::RECORDED_AT_FORMAT),
         ], $this->getPayload());
     }
@@ -54,10 +54,9 @@ abstract class SerializableEvent extends AbstractEvent implements Serializable
 
         assert($recordedAt instanceof DateTimeImmutable);
         assert(is_string($data['aggregateRootId'] ?? null) === true);
-        assert(Uuid::isValid($data['aggregateRootId']) === true);
 
         parent::__construct(
-            Uuid::fromString($data['aggregateRootId']),
+            Uuid::fromRfc4122($data['aggregateRootId']),
             $recordedAt,
         );
     }

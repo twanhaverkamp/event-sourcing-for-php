@@ -28,16 +28,16 @@ final class Uuid implements UuidInterface
         return BaseUuid::isValid($uuid);
     }
 
-    public static function fromString(string $uuid): static
+    public static function fromRfc4122(string $uuid): static
     {
         assert(BaseUuid::isValid($uuid));
 
         return new self(
-            BaseUuid::fromString($uuid),
+            BaseUuid::fromRfc4122($uuid),
         );
     }
 
-    public function toString(): string
+    public function toRfc4122(): string
     {
         return $this->uuid->toRfc4122();
     }

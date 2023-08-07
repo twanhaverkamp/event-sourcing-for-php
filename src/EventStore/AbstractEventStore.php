@@ -39,7 +39,7 @@ abstract class AbstractEventStore implements EventStoreInterface
             $events = $this->loadEvents($aggregateRootId);
         } catch (Exception $e) {
             throw new EventStoreException(
-                "Something went wrong while loading data for aggregate root with ID '{$aggregateRootId->toString()}'.",
+                "Something went wrong while loading data for aggregate root with ID '{$aggregateRootId->toRfc4122()}'.",
                 $e
             );
         }
@@ -69,7 +69,7 @@ abstract class AbstractEventStore implements EventStoreInterface
                     sprintf(
                         'Something went wrong while saving an event of type \'%s\' for aggregate root with ID \'%s\'.',
                         $event::getType(),
-                        $aggregateRoot->getId()->toString(),
+                        $aggregateRoot->getId()->toRfc4122(),
                     ),
                     $e
                 );

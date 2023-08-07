@@ -92,7 +92,7 @@ final class AbstractEventStoreTest extends TestCase
         self::assertDirectoryDoesNotExist(sprintf(
             '%s/%s',
             self::$dir,
-            $aggregateRoot->getId()->toString(),
+            $aggregateRoot->getId()->toRfc4122(),
         ));
     }
 
@@ -113,7 +113,7 @@ final class AbstractEventStoreTest extends TestCase
         $dir = sprintf(
             '%s/%s',
             self::$dir,
-            $aggregateRoot->getId()->toString(),
+            $aggregateRoot->getId()->toRfc4122(),
         );
 
         self::assertDirectoryExists($dir);
@@ -138,7 +138,7 @@ final class AbstractEventStoreTest extends TestCase
         $dir = sprintf(
             '%s/%s',
             self::$dir,
-            $aggregateRoot->getId()->toString(),
+            $aggregateRoot->getId()->toRfc4122(),
         );
 
         self::assertCount(0, $aggregateRoot->getUnsavedEvents());

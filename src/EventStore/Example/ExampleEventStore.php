@@ -81,6 +81,6 @@ final class ExampleEventStore extends AbstractEventStore
 
     private function getPath(Uuid $aggregateRootId): string
     {
-        return "$this->dir/{$aggregateRootId->toString()}";
+        return "$this->dir/{$aggregateRootId->toRfc4122()}";
     }
 }
