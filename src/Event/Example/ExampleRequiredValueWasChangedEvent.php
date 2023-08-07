@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace TwanHaverkamp\EventSourcingForPhp\Event\Example;
 
 use DateTimeImmutable;
+use DateTimeInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\AbstractEvent;
 use TwanHaverkamp\EventSourcingForPhp\Event\AnonymizableInterface;
-use TwanHaverkamp\EventSourcingForPhp\Event\SerializableEvent;
 use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
@@ -14,24 +15,26 @@ use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */
-final class ExampleRequiredValueWasChangedEvent extends SerializableEvent implements AnonymizableInterface
+final class ExampleRequiredValueWasChangedEvent extends AbstractEvent implements AnonymizableInterface
 {
     public function __construct(
         private string $requiredValue,
         Uuid $aggregateRootId,
-        DateTimeImmutable $recordedAt = new DateTimeImmutable(),
+        DateTimeInterface $recordedAt = new DateTimeImmutable(),
     ) {
         parent::__construct($aggregateRootId, $recordedAt);
     }
 
     /**
-     * @param non-empty-array<string, string> $data
+     * @param non-empty-array<string, string> $payload
      */
-    public function __unserialize(array $data): void
+    public static function reconstruct(Uuid $aggregateRootId, DateTimeInterface $recordedAt, array $payload): self
     {
-        $this->requiredValue = (string)($data['requiredValue'] ?? null);
-
-        parent::__unserialize($data);
+        return new self(
+            (string)($payload['requiredValue'] ?? null),
+            $aggregateRootId,
+            $recordedAt,
+        );
     }
 
     public function getPayload(): array

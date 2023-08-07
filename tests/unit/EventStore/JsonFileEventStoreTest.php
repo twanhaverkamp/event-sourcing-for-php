@@ -12,15 +12,16 @@ use SplFileInfo;
 use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
 use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Example\ExampleAggregateRoot;
 use TwanHaverkamp\EventSourcingForPhp\Event\EventCollection;
-use TwanHaverkamp\EventSourcingForPhp\EventStore\Example\ExampleEventStore;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\JsonFileEventStore;
 use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
+ * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\EventStore\JsonFileEventStore
  * @coversDefaultClass \TwanHaverkamp\EventSourcingForPhp\EventStore\AbstractEventStore
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */
-final class AbstractEventStoreTest extends TestCase
+final class JsonFileEventStoreTest extends TestCase
 {
     private static string $dir;
 
@@ -58,7 +59,7 @@ final class AbstractEventStoreTest extends TestCase
     {
         $aggregateRoot = self::getAggregateRoot();
 
-        $eventStore = new ExampleEventStore(self::$dir);
+        $eventStore = new JsonFileEventStore(self::$dir);
         $eventStore->save($aggregateRoot);
 
         $aggregateRootId = $aggregateRoot->getId();
@@ -85,7 +86,7 @@ final class AbstractEventStoreTest extends TestCase
             new EventCollection()
         );
 
-        $eventStore = new ExampleEventStore(self::$dir);
+        $eventStore = new JsonFileEventStore(self::$dir);
         $eventStore->save($aggregateRoot);
 
         self::assertFalse($aggregateRoot->hasUnsavedEvents());
@@ -107,7 +108,7 @@ final class AbstractEventStoreTest extends TestCase
     {
         $aggregateRoot = self::getAggregateRoot();
 
-        $eventStore = new ExampleEventStore(self::$dir);
+        $eventStore = new JsonFileEventStore(self::$dir);
         $eventStore->save($aggregateRoot);
 
         $dir = sprintf(
@@ -117,7 +118,7 @@ final class AbstractEventStoreTest extends TestCase
         );
 
         self::assertDirectoryExists($dir);
-        self::assertCount(3, glob("$dir/*.tmp") ?: []);
+        self::assertCount(3, glob("$dir/*.json") ?: []);
     }
 
     /**
@@ -132,14 +133,8 @@ final class AbstractEventStoreTest extends TestCase
         $aggregateRoot = self::getAggregateRoot();
         self::assertCount(3, $aggregateRoot->getUnsavedEvents());
 
-        $eventStore = new ExampleEventStore(self::$dir);
+        $eventStore = new JsonFileEventStore(self::$dir);
         $eventStore->save($aggregateRoot);
-
-        $dir = sprintf(
-            '%s/%s',
-            self::$dir,
-            $aggregateRoot->getId()->toRfc4122(),
-        );
 
         self::assertCount(0, $aggregateRoot->getUnsavedEvents());
     }

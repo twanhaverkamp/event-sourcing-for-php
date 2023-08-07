@@ -113,8 +113,8 @@ final class EventCollection implements Countable, Iterator
     private function sort(): void
     {
         usort($this->events, function (EventInterface $a, EventInterface $b) {
-            $aRegisteredAt = (int)$a->getRecordedAt()->format('Uu');
-            $bRegisteredAt = (int)$b->getRecordedAt()->format('Uu');
+            $aRegisteredAt = (int)$a->getRecordedAt()->format(EventInterface::RECORDED_AT_FORMAT);
+            $bRegisteredAt = (int)$b->getRecordedAt()->format(EventInterface::RECORDED_AT_FORMAT);
 
             if ($aRegisteredAt === $bRegisteredAt) {
                 return 0;

@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace TwanHaverkamp\EventSourcingForPhp\Event\Example;
 
 use DateTimeImmutable;
-use TwanHaverkamp\EventSourcingForPhp\Event\SerializableEvent;
+use DateTimeInterface;
+use TwanHaverkamp\EventSourcingForPhp\Event\AbstractEvent;
 use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
@@ -13,23 +14,26 @@ use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
  *
  * @author Twan Haverkamp <twan.haverkamp@outlook.com>
  */
-final class ExampleOptionalValueWasChangedEvent extends SerializableEvent
+final class ExampleOptionalValueWasChangedEvent extends AbstractEvent
 {
     public function __construct(
-        private string|null $optionalValue,
+        private readonly string|null $optionalValue,
         Uuid $aggregateRootId,
-        DateTimeImmutable $recordedAt = new DateTimeImmutable(),
+        DateTimeInterface $recordedAt = new DateTimeImmutable(),
     ) {
         parent::__construct($aggregateRootId, $recordedAt);
     }
 
     /**
-     * @param non-empty-array<string, string|null> $data
+     * @param array<string, string|null> $payload
      */
-    public function __unserialize(array $data): void
+    public static function reconstruct(Uuid $aggregateRootId, DateTimeInterface $recordedAt, array $payload): self
     {
-        $this->optionalValue = $data['optionalValue'] ?? null;
-        parent::__unserialize($data);
+        return new self(
+            $payload['optionalValue'] ?? null,
+            $aggregateRootId,
+            $recordedAt,
+        );
     }
 
     public function getPayload(): array

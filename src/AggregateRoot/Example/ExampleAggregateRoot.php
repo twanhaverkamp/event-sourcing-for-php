@@ -9,7 +9,7 @@ use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\Anonymizable;
 use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleOptionalValueWasChangedEvent;
 use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleRequiredValueWasChangedEvent;
 use TwanHaverkamp\EventSourcingForPhp\Event\Example\ExampleWasCreatedEvent;
-use TwanHaverkamp\EventSourcingForPhp\EventStore\Example\ExampleEventStore;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\JsonFileEventStore;
 use TwanHaverkamp\EventSourcingForPhp\Uuid\Uuid;
 
 /**
@@ -21,7 +21,7 @@ final class ExampleAggregateRoot extends Anonymizable
 {
     public static function getEventStoreClass(): string
     {
-        return ExampleEventStore::class;
+        return JsonFileEventStore::class;
     }
 
     public static function create(string $requiredValue, ?string $optionalValue = null): self

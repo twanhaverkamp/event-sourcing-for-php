@@ -7,7 +7,7 @@ namespace TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore;
 use PHPUnit\Framework\TestCase;
 use TwanHaverkamp\EventSourcingForPhp\AggregateRoot\AggregateRootInterface;
 use TwanHaverkamp\EventSourcingForPhp\EventStore\EventStoreManager;
-use TwanHaverkamp\EventSourcingForPhp\EventStore\Example\ExampleEventStore;
+use TwanHaverkamp\EventSourcingForPhp\EventStore\JsonFileEventStore;
 use TwanHaverkamp\EventSourcingForPhp\Exception\EventStoreNotFoundException;
 use TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore\Mock\AggregateRootMock;
 use TwanHaverkamp\EventSourcingForPhp\Tests\Unit\EventStore\Mock\EventStoreMock;
@@ -40,7 +40,7 @@ final class EventStoreManagerTest extends TestCase
 
         $eventStoreManager = new EventStoreManager([
             $eventStoreMock,
-            new ExampleEventStore('example-dir'),
+            new JsonFileEventStore('example-dir'),
         ]);
 
         $eventStoreManager->load($aggregateRoot->getId(), $aggregateRoot::class);
@@ -57,7 +57,7 @@ final class EventStoreManagerTest extends TestCase
         $this->expectException(EventStoreNotFoundException::class);
 
         $eventStoreManager = new EventStoreManager([
-            new ExampleEventStore('example-dir'),
+            new JsonFileEventStore('example-dir'),
         ]);
         $eventStoreManager->load($aggregateRoot->getId(), $aggregateRoot::class);
     }
@@ -82,7 +82,7 @@ final class EventStoreManagerTest extends TestCase
 
         $eventStoreManager = new EventStoreManager([
             $eventStoreMock,
-            new ExampleEventStore('example-dir'),
+            new JsonFileEventStore('example-dir'),
         ]);
 
         $eventStoreManager->save($aggregateRoot);
@@ -99,7 +99,7 @@ final class EventStoreManagerTest extends TestCase
         $this->expectException(EventStoreNotFoundException::class);
 
         $eventStoreManager = new EventStoreManager([
-            new ExampleEventStore('example-dir'),
+            new JsonFileEventStore('example-dir'),
         ]);
         $eventStoreManager->load($aggregateRoot->getId(), $aggregateRoot::class);
     }
